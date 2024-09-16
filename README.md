@@ -10,8 +10,8 @@ Business Owner Management:
 Signup, Login, and Logout features for business owners.
 
 User Management:
-User registration capabilities.
-User and record lookup with edit and delete functionalities.
+Customer registration capabilities.
+Customer and record lookup with edit and delete functionalities.
 Reporting:
 Generate comprehensive reports to track and analyze business performance.
 
