@@ -1,0 +1,43 @@
+/* Custom styles for the signup page */
+
+
+body {
+  background-color: #faf8f9;
+}
+
+.card {
+  border-radius: 0.5rem;
+}
+
+.card-header {
+  background-color: #007bff;
+  color: white;
+  border-bottom: 1px solid #007bff;
+}
+
+.card-footer {
+  background-color: #f1f1f1;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+form {
+  padding: 15px;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.success-snackbar {
+  background-color: #4caf50; /* Green background */
+  color: white; /* White text */
+}

@@ -1,0 +1,40 @@
+<div class="dashboard-container">
+  <h1 class="dashboard-title">Dashboard</h1>
+
+  <div class="metrics-container">
+    <div class="metric-card">
+      <h3>Total Children</h3>
+      <p class="metric-value">{{ metrics.totalChildren }}</p>
+    </div>
+    <div class="metric-card">
+      <h3>Total Staff</h3>
+      <p class="metric-value">{{ metrics.totalStaff }}</p>
+    </div>
+    <div class="metric-card">
+      <h3>Daily Activities</h3>
+      <p class="metric-value">{{ metrics.dailyActivities }}</p>
+    </div>
+  </div>
+
+  <div class="charts-container">
+    <div class="chart-card">
+      <h3>Children Attendance</h3>
+      <!-- Placeholder for a chart -->
+      <app-attendance-chart></app-attendance-chart>
+    </div>
+    <div class="chart-card">
+      <h3>Staff Activity</h3>
+      <!-- Placeholder for a chart -->
+      <app-staff-activity-chart></app-staff-activity-chart>
+    </div>
+  </div>
+
+  <div class="upcoming-events">
+    <h3>Upcoming Events</h3>
+    <ul>
+      <li *ngFor="let event of metrics.upcomingEvents">
+        <span class="event-date">{{ event.date }}</span> - {{ event.event }}
+      </li>
+    </ul>
+  </div>
+</div>

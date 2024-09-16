@@ -1,0 +1,45 @@
+/* Container for the schedule */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Heading styling */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Button styling */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Appointment list styling */
+.appointment-list {
+  list-style: none;
+  padding: 0;
+}
+
+.appointment-item {
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+}
+
+/* Optionally, add spacing between items */
+.appointment-item:not(:last-child) {
+  margin-bottom: 10px;
+}
