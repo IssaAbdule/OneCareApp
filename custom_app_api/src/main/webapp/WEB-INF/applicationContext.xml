@@ -1,0 +1,52 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+<!--       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"-->
+<!--       xmlns:context="http://www.springframework.org/schema/context"-->
+<!--       xmlns:security="http://www.springframework.org/schema/c"-->
+<!--       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">-->
+
+<!--    &lt;!&ndash; Enable component scanning for annotations &ndash;&gt;-->
+<!--    <context:component-scan base-package="com.example.custom_application" />-->
+
+<!--    &lt;!&ndash; Enable Spring MVC &ndash;&gt;-->
+<!--    <mvc:annotation-driven />-->
+
+<!--    &lt;!&ndash; Configure Spring MVC view resolver if needed &ndash;&gt;-->
+<!--    &lt;!&ndash; Example: InternalResourceViewResolver &ndash;&gt;-->
+
+<!--    &lt;!&ndash; Configure Spring Security if needed &ndash;&gt;-->
+<!--    &lt;!&ndash; Example: GlobalMethodSecurityConfiguration &ndash;&gt;-->
+
+<!--    &lt;!&ndash; Configure HTTP Session management &ndash;&gt;-->
+<!--    <bean id="sessionRegistry" class="org.springframework.security.core.session.SessionRegistryImpl" />-->
+
+<!--    <bean id="sessionAuthenticationStrategy"-->
+<!--          class="org.springframework.security.web.authentication.session.ConcurrentSessionControlAuthenticationStrategy">-->
+<!--        <constructor-arg ref="sessionRegistry" />-->
+<!--        <property name="maximumSessions" value="-1" />-->
+<!--    </bean>-->
+
+<!--    <bean id="authenticationManager"-->
+<!--          class="org.springframework.security.authentication.ProviderManager">-->
+<!--        <constructor-arg>-->
+<!--            <list>-->
+<!--                &lt;!&ndash; Add your authentication provider(s) &ndash;&gt;-->
+<!--            </list>-->
+<!--        </constructor-arg>-->
+<!--    </bean>-->
+
+<!--    <bean id="securityFilterChain"-->
+<!--          class="org.springframework.security.web.FilterChainProxy">-->
+<!--        <constructor-arg>-->
+<!--            <list>-->
+<!--                &lt;!&ndash; Add security filters as needed &ndash;&gt;-->
+<!--                <security:filter-chain pattern="/api/login" filters="securityContextPersistenceFilter, logoutFilter, usernamePasswordAuthenticationFilter, concurrentSessionFilter, exceptionTranslationFilter, filterSecurityInterceptor" />-->
+<!--            </list>-->
+<!--        </constructor-arg>-->
+<!--    </bean>-->
+
+
+<!--    &lt;!&ndash; Additional beans and configurations as needed &ndash;&gt;-->
+
+<!--</beans>-->
+
