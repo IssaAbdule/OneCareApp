@@ -1,0 +1,7 @@
+#---
+#spring:
+#  #  application:
+#  #    name: next-gen-cloud-api
+#  cors:
+#    mappings: "/**"
+#    origins:  "http://localhost:4200,http://localhost:8080"
