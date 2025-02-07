@@ -1,0 +1,98 @@
+.register-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.register-form .form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.register-form label {
+  flex: 0 0 200px;
+  font-weight: 600;
+  color: #555;
+  margin-right: 10px;
+}
+
+.required {
+  color: red;
+  margin-left: 5px;
+}
+
+.register-form .form-control {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.alert {
+  text-align: center;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+/* styles.css or component-specific CSS file */
+
+.form-group {
+  position: relative;
+  margin-bottom: 1rem; /* Add space below each form group */
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper select {
+  width: 100%;
+  padding: 12px 40px 12px 12px; /* Add space for the icon on the right side */
+  background: #fff; /* White background for the select element */
+  border: 1px solid #ccc; /* Border style */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 16px; /* Adjust font size if needed */
+  appearance: none; /* Remove default browser styling */
+}
+
+.select-wrapper::after {
+  content: '\25BC'; /* Unicode character for a downwards arrow */
+  position: absolute;
+  right: 12px; /* Space from the right edge */
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* Prevent the arrow from interfering with clicks */
+  font-size: 16px; /* Adjust font size for the arrow */
+  color: #666; /* Arrow color */
+  z-index: 1; /* Ensure the arrow is above other elements */
+}

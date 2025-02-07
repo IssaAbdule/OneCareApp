@@ -1,0 +1,12 @@
+<div class="container">
+  <h2>Schedule</h2>
+  <button (click)="addAppointment()" class="btn btn-primary">Add Appointment</button>
+  <div *ngIf="appointments.length === 0">
+    <p>No appointments scheduled.</p>
+  </div>
+  <ul *ngIf="appointments.length > 0" class="appointment-list">
+    <li *ngFor="let appointment of appointments" class="appointment-item">
+      {{ appointment.date | date:'MM/dd/yyyy' }} - {{ appointment.clientName }}
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,144 @@
+/* Global reset and font setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Body styling with a background color */
+body {
+  background-color: #4CA1AF !important; /* Solid background color */
+  height: 100vh; /* Ensure it covers the full viewport height */
+  margin: 0;
+}
+
+/* Navbar styling */
+.navbar {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  width: 100% !important;
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  padding: 10px 20px !important;
+}
+
+.navbar .navbar-brand {
+  color: #FFD700; /* Gold color for the brand name */
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar .circle-box {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #FFD700;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  color: #FFD700;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+.navbar .brand-text {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  color: white !important;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav {
+  margin-left: auto;
+}
+
+.nav-link:hover {
+  color: #FFD700 !important; /* Gold color on hover */
+  text-decoration: underline;
+}
+
+.nav-item .active {
+  color: #FFD700 !important; /* Gold color for the active tab */
+  font-weight: bold;
+  border-bottom: 2px solid #FFD700; /* Underline active tab */
+}
+
+/* Welcome text styling */
+.welcome-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark background with some transparency */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+
+
+.welcome-text h1 {
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #FFD700; /* Gold color for the header */
+}
+
+.welcome-text p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+/* Container for routed components */
+.container {
+  flex: 1;
+  width: 100%;
+  padding-top: 20px;
+  text-align: center;
+}
+
+/* Ensure the navbar stays visible on smaller screens */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 5px 10px;
+  }
+
+  .navbar .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .welcome-text {
+    font-size: 1.2rem;
+    padding: 15px;
+  }
+
+  .welcome-text h1 {
+    font-size: 2rem;
+  }
+
+  .welcome-text p {
+    font-size: 1rem;
+  }
+}
+
+.navbar-brand.non-clickable {
+  cursor: default; /* Makes it clear that it's not clickable */
+  pointer-events: none; /* Disables click events */
+}
+

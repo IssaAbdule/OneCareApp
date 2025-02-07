@@ -1,0 +1,8 @@
+<div class="reports-container">
+  <h2>Reports</h2>
+  <button (click)="generateReport()">Generate Report</button>
+  <div *ngIf="reportData">
+    <h3>Report Results</h3>
+    <p>{{ reportData }}</p>
+  </div>
+</div>

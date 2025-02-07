@@ -1,0 +1,76 @@
+<div class="container">
+  <h2>View Customer Records</h2>
+  <div *ngIf="records.length === 0">
+    <p>No records found.</p>
+  </div>
+  <table *ngIf="records.length > 0" class="table table-striped">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>SSN</th>
+        <th>Email</th>
+        <th>Date of Birth</th>
+        <th>Gender</th>
+        <th>Contact Number</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let record of records">
+        <td>{{ record.firstname }}</td>
+        <td>{{ record.lastname }}</td>
+        <td>{{ record.ssn }}</td>
+        <td>{{ record.email }}</td>
+        <td>{{ record.dob | date:'MM/dd/yyyy' }}</td>
+        <td>{{ record.gender }}</td>
+        <td>{{ record.phone }}</td>
+        <td>
+          <button class="btn btn-info" (click)="editRecord(record.custid)">Edit</button>
+          <button class="btn btn-danger" (click)="deleteRecord(record.custid)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Edit Record Form -->
+<div *ngIf="selectedRecord">
+  <h3>Edit Record</h3>
+  <form #editForm="ngForm">
+    <div>
+      <label for="firstname">First Name:</label>
+      <input type="text" id="firstname" [(ngModel)]="selectedRecord.firstname" name="firstname" required>
+    </div>
+    <div>
+      <label for="lastname">Last Name:</label>
+      <input type="text" id="lastname" [(ngModel)]="selectedRecord.lastname" name="lastname" required>
+    </div>
+    <div>
+      <label for="ssn">SSN:</label>
+      <input type="text" id="ssn" [(ngModel)]="selectedRecord.ssn" name="ssn" required>
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" [(ngModel)]="selectedRecord.email" name="email" required>
+    </div>
+    <div>
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" [(ngModel)]="selectedRecord.dob" name="dob" required>
+    </div>
+    <div>
+      <label for="gender">Gender:</label>
+      <select id="gender" [(ngModel)]="selectedRecord.gender" name="gender" required>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div>
+      <label for="phone">Contact Number:</label>
+      <input type="tel" id="phone" [(ngModel)]="selectedRecord.phone" name="phone" required>
+    </div>
+    <button (click)="saveChanges()" class="btn btn-primary">Save Changes</button>
+    <button (click)="cancelEdit()" class="btn btn-secondary">Cancel</button>
+  </form>
+</div>
+</div>

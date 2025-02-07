@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <span class="navbar-brand non-clickable">
+    <span class="circle-box">O</span><span class="brand-text">neCareApp</span>
+  </span>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/layout/dashboard" routerLinkActive="active" (click)="viewDashboard()">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/layout/register" routerLinkActive="active" (click)="registerRecord()">Register</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/layout/view" routerLinkActive="active" (click)="viewRecords()">View</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/layout/search" routerLinkActive="active" (click)="searchRecords()">Search</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/layout/schedule" routerLinkActive="active" (click)="manageSchedule()">Schedule</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/layout/reports" routerLinkActive="active" (click)="viewReports()">Reports</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/logout" routerLinkActive="active" (click)="onLogout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Welcome text centered on the page, only displayed when showWelcomeText is true -->
+<!-- <div *ngIf="showWelcomeText" class="welcome-text">
+  <h1>Welcome to Your OneCareApp!</h1>
+  <p>Experience seamless and efficient bookkeeping with our comprehensive tool designed to simplify your record-keeping tasks. From effortless registration of new entries to intuitive viewing and searching of records, our application provides a reliable solution for all your bookkeeping needs.</p>
+  <p>With an easy-to-use interface and powerful features, managing your records has never been easier. Get started now and discover how our app can streamline your financial management and help you stay organized.</p>
+</div> -->
+
+<!-- Routed components will be displayed here -->
+<div class="container mt-4">
+  <router-outlet></router-outlet>
+</div>
+
+<div *ngIf="logoutMsg" class="alert alert-success mt-3">
+  {{logoutMsg}}
+</div>

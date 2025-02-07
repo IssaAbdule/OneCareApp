@@ -1,0 +1,58 @@
+<div class="container">
+  <h2>Search Customer by SSN</h2>
+  <form (ngSubmit)="onSearch()" #searchForm="ngForm">
+    <div class="form-group">
+      <label for="ssn">SSN:</label>
+      <input
+        type="text"
+        id="ssn"
+        class="form-control"
+        [(ngModel)]="ssn"
+        name="ssn"
+        required
+        #ssnInput="ngModel"
+        pattern="^\d{3}-\d{2}-\d{4}$"
+        title="SSN must be in the format XXX-XX-XXXX"
+      />
+      <div *ngIf="ssnInput.invalid && ssnInput.touched" class="text-danger">
+        <div *ngIf="ssnInput.errors && ssnInput.errors['required']">SSN is required.</div>
+        <div *ngIf="ssnInput.errors && ssnInput.errors['pattern']">SSN must be in the format XXX-XX-XXXX.</div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="searchForm.invalid">Search</button>
+  </form>
+
+  <div *ngIf="!records.length && submitted">
+    <p>No records found.</p>
+  </div>
+
+  <table *ngIf="records.length > 0" class="table table-striped">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>SSN</th>
+        <th>Email</th>
+        <th>Date of Birth</th>
+        <th>Gender</th>
+        <th>Contact Number</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let record of records">
+        <td>{{ record.firstname }}</td>
+        <td>{{ record.lastname }}</td>
+        <td>{{ record.ssn }}</td>
+        <td>{{ record.email }}</td>
+        <td>{{ record.dob | date:'MM/dd/yyyy' }}</td>
+        <td>{{ record.gender }}</td>
+        <td>{{ record.phone }}</td>
+        <td>
+          <button class="btn btn-info" (click)="editRecord(record.id)">Edit</button>
+          <button class="btn btn-danger" (click)="deleteRecord(record.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

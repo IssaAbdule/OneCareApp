@@ -1,0 +1,125 @@
+<div class="register-container">
+  <h2>Register a New Customer</h2>
+  <form class="register-form" [formGroup]="registerForm" (ngSubmit)="onRegister()">
+    <!-- First Name -->
+    <div class="form-group">
+      <label for="firstName">First Name<span class="required">*</span></label>
+      <input
+        type="text"
+        id="firstName"
+        class="form-control"
+        formControlName="firstname"
+        placeholder="Enter first name">
+      <div *ngIf="submitted && hasError('firstname', 'required')" class="error-message">
+        <small>First name is required.</small>
+      </div>
+      <div *ngIf="submitted && hasError('firstname', 'minlength')" class="error-message">
+        <small>First name must be at least 2 characters.</small>
+      </div>
+    </div>
+
+    <!-- Last Name -->
+    <div class="form-group">
+      <label for="lastName">Last Name<span class="required">*</span></label>
+      <input
+        type="text"
+        id="lastName"
+        class="form-control"
+        formControlName="lastname"
+        placeholder="Enter last name">
+      <div *ngIf="submitted && hasError('lastname', 'required')" class="error-message">
+        <small>Last name is required.</small>
+      </div>
+      <div *ngIf="submitted && hasError('lastname', 'minlength')" class="error-message">
+        <small>Last name must be at least 2 characters.</small>
+      </div>
+    </div>
+
+    <!-- Social Security Number -->
+    <div class="form-group">
+      <label for="ssn">Social Security Number<span class="required">*</span></label>
+      <input
+        type="text"
+        id="ssn"
+        class="form-control"
+        formControlName="ssn"
+        placeholder="Enter SSN">
+      <div *ngIf="submitted && hasError('ssn', 'required')" class="error-message">
+        <small>Social Security Number is required.</small>
+      </div>
+      <div *ngIf="submitted && hasError('ssn', 'pattern')" class="error-message">
+        <small>Invalid SSN format. Correct format: XXX-XX-XXXX</small>
+      </div>
+    </div>
+
+    <!-- Email Address -->
+    <div class="form-group">
+      <label for="email">Email Address<span class="required">*</span></label>
+      <input
+        type="email"
+        id="email"
+        class="form-control"
+        formControlName="email"
+        placeholder="Enter email">
+      <div *ngIf="submitted && hasError('email', 'required')" class="error-message">
+        <small>Email is required.</small>
+      </div>
+      <div *ngIf="submitted && hasError('email', 'email')" class="error-message">
+        <small>Invalid email address.</small>
+      </div>
+    </div>
+
+    <!-- Date of Birth -->
+    <div class="form-group">
+      <label for="dob">Date of Birth<span class="required">*</span></label>
+      <input
+        type="date"
+        id="dob"
+        class="form-control"
+        formControlName="dob"
+        placeholder="mm/dd/yyyy">
+      <div *ngIf="submitted && hasError('dob', 'required')" class="error-message">
+        <small>Date of birth is required.</small>
+      </div>
+    </div>
+
+    <!-- Gender -->
+    <div class="form-group">
+      <label for="gender">Gender<span class="required">*</span></label>
+      <div class="select-wrapper">
+        <select id="gender" class="form-control" formControlName="gender">
+          <option value="">Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+      <div *ngIf="submitted && hasError('gender', 'required')" class="error-message">
+        <small>Gender is required.</small>
+      </div>
+    </div>
+
+    <!-- Contact Number -->
+    <div class="form-group">
+      <label for="contact">Contact Number<span class="required">*</span></label>
+      <input
+        type="tel"
+        id="contact"
+        class="form-control"
+        formControlName="phone"
+        placeholder="Enter contact number">
+      <div *ngIf="submitted && hasError('phone', 'required')" class="error-message">
+        <small>Contact number is required.</small>
+      </div>
+      <div *ngIf="submitted && hasError('phone', 'pattern')" class="error-message">
+        <small>Invalid contact number format. Must be 10 digits.</small>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary">Register</button>
+
+    <!-- Display success or error messages -->
+    <div *ngIf="successMessage" class="alert alert-success mt-3">{{ successMessage }}</div>
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+  </form>
+</div>
