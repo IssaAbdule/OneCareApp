@@ -10,6 +10,7 @@ import com.example.custom_application.repository.LoginInfoRepository;
 import com.example.custom_application.repository.SessionRepository;
 import com.example.custom_application.repository.UserInfoRepository;
 import jakarta.transaction.Transactional;
+import java.security.SecureRandom;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -156,7 +157,7 @@ public class LoginInfoService {
                 "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789$&";
         int length = 12;
 
-        Random random = new Random();
+        Random random = new SecureRandom();
         StringBuilder randomString = new StringBuilder();
         for (int i = 0; i < length; i++) {
             int index = random.nextInt(generatedString.length());
